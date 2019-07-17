@@ -1,0 +1,17 @@
+---
+- name: store logs
+  hosts: all
+
+  tasks:
+    - name: get logs
+      command: tail /var/log/messages
+      register: get_logs
+    - name: output
+      debug: msg="{{ get_logs }}"
+
+**************************************************************************
+Get private ip cat ip.yml
+---
+ - hosts: all
+   tasks:
+    - debug: var=ansible_eth0.ipv4.address
