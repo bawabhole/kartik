@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   user: root
+   tasks:
+     - name: get hostname
+       debug: var=ansible_hostname
+     - name: get ip address
+       debug: var=ansible_default_ipv4.address
+     - name: get mac address
+       debug: var=ansible_default_ipv4.macaddress
+     - name: get process count
+       debug: var=ansible_processor_count
