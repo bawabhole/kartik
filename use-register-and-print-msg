@@ -1,0 +1,13 @@
+---
+- name: get public IP
+  hosts: all
+
+  tasks:
+    - name: get public IP
+      ipify_facts:
+      register: public_ip
+    - name: output
+      debug: msg="{{ public_ip }}"
+	  
+    
+    
